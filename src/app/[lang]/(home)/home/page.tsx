@@ -1,7 +1,11 @@
+import { getDictionary } from 'get-dictionary'
 import { Locale } from 'i18n-config'
 import { Metadata } from 'next'
 
+import dynamic from 'next/dynamic'
 import React from 'react'
+
+const HomeDynamic = dynamic(() => import('@/features/home/page').then((mod) => mod.HomeComponent))
 
 export const metadata = {
    title: 'Converto | Transformar seus arquivos é simples e rápido.',
@@ -16,5 +20,10 @@ export const metadata = {
 } as Metadata
 
 export default async function HomePage({ params: { lang } }: { params: { lang: Locale } }) {
-   return <React.Fragment>test</React.Fragment>
+   const dictionary = await getDictionary(lang)
+   return (
+      <React.Suspense>
+         <HomeDynamic dictionary={dictionary} />
+      </React.Suspense>
+   )
 }
