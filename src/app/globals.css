@@ -2,6 +2,22 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
+@media (prefers-color-scheme: light) {
+   :root {
+      --favicon: url('https://res.cloudinary.com/dnqiosdb6/image/upload/v1720996480/Convertio_favicon_black_vbcc8x.ico');
+   }
+}
+
+@media (prefers-color-scheme: dark) {
+   :root {
+      --favicon: url('https://res.cloudinary.com/dnqiosdb6/image/upload/v1720996473/Convertio_white_favicon_oyyley.ico');
+   }
+}
+
+link[rel='icon'] {
+   content: var(--favicon);
+}
+
 @font-face {
    font-family: 'Atyp Display';
    src: url('../../public/fonts/AtypDisplay-Light.ttf') format('truetype');

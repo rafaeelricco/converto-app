@@ -1,4 +1,5 @@
 import '@/app/globals.css'
+import { Head } from '@/components/seo'
 
 import { i18n } from 'i18n-config'
 import { Metadata } from 'next'
@@ -15,6 +16,10 @@ export async function generateStaticParams() {
 export default function Root({ children, params }: { children: React.ReactNode; params: { lang: string } }) {
    return (
       <html lang={params.lang}>
+         <Head
+            title="Converto | Transformar seus arquivos é simples e rápido."
+            description="A solução gratuita para todas as suas necessidades de conversão de arquivos."
+         />
          <body className="antialiased" id="root">
             {children}
             <Toaster />
