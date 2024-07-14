@@ -5,7 +5,7 @@ import { Metadata } from 'next'
 import dynamic from 'next/dynamic'
 import React from 'react'
 
-const HomeDynamic = dynamic(() => import('@/features/home/page').then((mod) => mod.HomeComponent))
+const HomeDynamic = dynamic(() => import('@/features/home/hero').then((mod) => mod.HomeComponent), { ssr: true })
 
 export const metadata = {
    title: 'Converto | Transformar seus arquivos é simples e rápido.',

@@ -12,7 +12,7 @@ const HomeComponent: React.FC<HomeProps> = ({ dictionary }: HomeProps) => {
          <div className="relative">
             <div className="container relative flex min-h-screen flex-col items-center justify-center">
                <div className="z-20 space-y-6">
-                  <Logo className="h-16 w-full fill-black-200 antialiased" />
+                  <Logo className="h-12 w-full fill-black-200 antialiased md:h-14 lg:h-16" />
                   <div className="relative flex flex-col space-y-8 lg:space-y-10 2xl:space-y-20">
                      <div className="flex w-full flex-col items-center gap-2">
                         <div className="flex flex-col items-center gap-6">
