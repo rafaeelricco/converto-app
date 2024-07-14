@@ -1,18 +1,17 @@
 import { Locale } from 'i18n-config'
 import { Metadata } from 'next'
+
 import React from 'react'
 
 export const metadata = {
-   title: 'Ricco | Descubra a força da colaboração para realizar suas ideias',
-   description:
-      'Mais do que desenvolvimento, uma rede de talentos à sua disposição para transformar seus sonhos em realidade digital.',
+   title: 'Converto | Transformar seus arquivos é simples e rápido.',
+   description: 'A solução gratuita para todas as suas necessidades de conversão de arquivos.',
    openGraph: {
       type: 'website',
       url: `https://${process.env.VERCEL_URL}`,
-      title: 'Ricco | Descubra a força da colaboração para realizar suas ideias',
-      description:
-         'Mais do que desenvolvimento, uma rede de talentos à sua disposição para transformar seus sonhos em realidade digital.',
-      siteName: 'Ricco | Descubra a força da colaboração para realizar suas ideias'
+      title: 'Converto | Transformar seus arquivos é simples e rápido.',
+      description: 'A solução gratuita para todas as suas necessidades de conversão de arquivos.',
+      siteName: 'Converto | Transformar seus arquivos é simples e rápido.'
    }
 } as Metadata
 
