@@ -1,4 +1,159 @@
-@tailwind base;
-  @tailwind components;
-  @tailwind utilities;
-  
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@font-face {
+   font-family: 'Atyp Display';
+   src: url('../../public/fonts/AtypDisplay-Light.ttf') format('truetype');
+   font-weight: 300;
+   font-style: normal;
+}
+
+@font-face {
+   font-family: 'Atyp Display';
+   src: url('../../public/fonts/AtypDisplay-Medium.ttf') format('truetype');
+   font-weight: 500;
+   font-style: normal;
+}
+
+@font-face {
+   font-family: 'Atyp Display';
+   src: url('../../public/fonts/AtypDisplay-Regular.ttf') format('truetype');
+   font-weight: 400;
+   font-style: normal;
+}
+
+@font-face {
+   font-family: 'Atyp Display';
+   src: url('../../public/fonts/AtypDisplay-Semibold.ttf') format('truetype');
+   font-weight: 600;
+   font-style: normal;
+}
+
+@font-face {
+   font-family: 'Atyp Display';
+   src: url('../../public/fonts/AtypDisplay-Bold.ttf') format('truetype');
+   font-weight: 700;
+   font-style: normal;
+}
+
+@font-face {
+   font-family: 'Atyp Text';
+   src: url('../../public/fonts/AtypText-Light.ttf') format('truetype');
+   font-weight: 300;
+   font-style: normal;
+}
+
+@font-face {
+   font-family: 'Atyp Text';
+   src: url('../../public/fonts/AtypText-Medium.ttf') format('truetype');
+   font-weight: 500;
+   font-style: normal;
+}
+
+@font-face {
+   font-family: 'Atyp Text';
+   src: url('../../public/fonts/AtypText-Regular.ttf') format('truetype');
+   font-weight: 400;
+   font-style: normal;
+}
+
+@font-face {
+   font-family: 'Atyp Text';
+   src: url('../../public/fonts/AtypText-Semibold.ttf') format('truetype');
+   font-weight: 600;
+   font-style: normal;
+}
+
+@font-face {
+   font-family: 'Atyp Text';
+   src: url('../../public/fonts/AtypText-Bold.ttf') format('truetype');
+   font-weight: 700;
+   font-style: normal;
+}
+
+@font-face {
+   font-family: 'SF Pro Display';
+   src: url('../../public/fonts/SF-Pro-Display-Light.otf') format('opentype');
+   font-weight: 300;
+   font-style: normal;
+}
+
+@font-face {
+   font-family: 'SF Pro Display';
+   src: url('../../public/fonts/SF-Pro-Display-Medium.otf') format('opentype');
+   font-weight: 500;
+   font-style: normal;
+}
+
+@font-face {
+   font-family: 'SF Pro Display';
+   src: url('../../public/fonts/SF-Pro-Display-Regular.otf') format('opentype');
+   font-weight: 400;
+   font-style: normal;
+}
+
+@font-face {
+   font-family: 'SF Pro Display';
+   src: url('../../public/fonts/SF-Pro-Display-Semibold.otf') format('opentype');
+   font-weight: 600;
+   font-style: normal;
+}
+
+@font-face {
+   font-family: 'SF Pro Display';
+   src: url('../../public/fonts/SF-Pro-Display-Bold.otf') format('opentype');
+   font-weight: 700;
+   font-style: normal;
+}
+
+@font-face {
+   font-family: 'SF Mono';
+   src: url('../../public/fonts/SF-Mono-Light.otf') format('opentype');
+   font-weight: 300;
+   font-style: normal;
+}
+
+@font-face {
+   font-family: 'SF Mono';
+   src: url('../../public/fonts/SF-Mono-Medium.otf') format('opentype');
+   font-weight: 500;
+   font-style: normal;
+}
+
+@font-face {
+   font-family: 'SF Mono';
+   src: url('../../public/fonts/SF-Mono-Regular.otf') format('opentype');
+   font-weight: 400;
+   font-style: normal;
+}
+
+@font-face {
+   font-family: 'SF Mono';
+   src: url('../../public/fonts/SF-Mono-Semibold.otf') format('opentype');
+   font-weight: 600;
+   font-style: normal;
+}
+
+@font-face {
+   font-family: 'SF Mono';
+   src: url('../../public/fonts/SF-Mono-Bold.otf') format('opentype');
+   font-weight: 700;
+   font-style: normal;
+}
+
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+body {
+   -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale;
+   scroll-behavior: smooth;
+   overflow-x: hidden;
+   -webkit-overflow-scrolling: touch;
+   background-color: theme('colors.black.900');
+   color: theme('colors.white.100');
+}
