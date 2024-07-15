@@ -2,6 +2,7 @@
 
 import { Grid, Logo } from '@/components/svgs'
 import { Button } from '@/components/ui/button'
+import { Header } from '@/components/ui/header'
 import { DictionaryProps } from '@/types/dictionary'
 
 import React from 'react'
@@ -10,6 +11,7 @@ const HomeComponent: React.FC<HomeProps> = ({ dictionary }: HomeProps) => {
    return (
       <React.Fragment>
          <div className="relative">
+            <Header dictionary={dictionary} />
             <div className="container relative flex min-h-screen flex-col items-center justify-center">
                <div className="z-20 space-y-6">
                   <Logo className="h-12 w-full fill-black-200 antialiased md:h-14 lg:h-16" />

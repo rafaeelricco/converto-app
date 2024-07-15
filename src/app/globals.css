@@ -171,7 +171,6 @@ body {
    overflow-x: hidden;
    -webkit-overflow-scrolling: touch;
    background-color: theme('colors.white.100');
-   color: theme('colors.white.100');
 }
 
 body,
@@ -212,7 +211,7 @@ input:-webkit-autofill {
 }
 
 input {
-   caret-color: theme('colors.white.100');
+   caret-color: theme('colors.black.500');
 }
 
 ::-webkit-scrollbar {

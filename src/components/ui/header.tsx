@@ -1,17 +1,69 @@
 'use client'
 
+import { LogoCircle } from '@/components/svgs'
+import { Input } from '@/components/ui/input'
+import { cn } from '@/lib/utils'
+import { general_routes } from '@/routes/general'
 import { DictionaryProps } from '@/types/dictionary'
+import Link from 'next/link'
 
 import React from 'react'
 
-const Header: React.FC<DictionaryProps> = ({ dictionary }: DictionaryProps) => {
+const Header: React.FC<DictionaryProps> = ({ dictionary, className }: HeaderProps) => {
+   const items = [
+      {
+         id: 1,
+         label: 'Home',
+         link: general_routes.home,
+         external: false
+      },
+      {
+         id: 1,
+         label: 'Área de conversão',
+         link: general_routes.converter,
+         external: false
+      },
+      {
+         id: 1,
+         label: 'GitHub',
+         link: 'https://github.com/rafaeelricco/converto-app',
+         external: true
+      }
+   ]
+
    return (
       <React.Fragment>
-         <div className="bg-black flex h-fit w-full items-center justify-between gap-12 rounded-[3rem] border-[1px] border-[#5A606E] border-opacity-[24%] px-2 py-2 font-sf-pro-display backdrop-blur lg:min-h-[60px] lg:w-fit lg:px-4 lg:py-3">
-            test
-         </div>
+         <nav className={cn('absolute z-20 mx-auto w-screen py-8', className)}>
+            <div className="container flex items-center justify-between">
+               <LogoCircle className="h-10 w-10 antialiased" />
+               <div className="grid grid-cols-2 items-center gap-12">
+                  <Input placeholder="Pesquisar conversão" />
+                  <div className="grid grid-flow-col gap-12">
+                     {items.map((item, index) => (
+                        <ul className="w-full" key={item.id + index}>
+                           <li>
+                              <Link
+                                 href={item.link}
+                                 className="flex-shrink cursor-pointer text-black-500 hover:text-black-500/80 hover:underline"
+                                 target={item.external ? '_blank' : '_self'}
+                                 rel={item.external ? 'noreferrer' : undefined}
+                              >
+                                 {item.label}
+                              </Link>
+                           </li>
+                        </ul>
+                     ))}
+                  </div>
+               </div>
+            </div>
+         </nav>
       </React.Fragment>
    )
+}
+
+type HeaderProps = {
+   className?: string
+   dictionary: DictionaryProps['dictionary']
 }
 
 export { Header }
