@@ -2,6 +2,7 @@
 
 import { Grid, Logo } from '@/components/svgs'
 import { Button } from '@/components/ui/button'
+import { Footer } from '@/components/ui/footer'
 import { Header } from '@/components/ui/header'
 import { DictionaryProps } from '@/types/dictionary'
 
@@ -52,6 +53,7 @@ const HomeComponent: React.FC<HomeProps> = ({ dictionary }: HomeProps) => {
                </div>
             </div>
             <Grid className="absolute top-0 z-10" />
+            <Footer dictionary={dictionary} />
          </div>
       </React.Fragment>
    )

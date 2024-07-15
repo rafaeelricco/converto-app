@@ -5,8 +5,8 @@ import { Input } from '@/components/ui/input'
 import { cn } from '@/lib/utils'
 import { general_routes } from '@/routes/general'
 import { DictionaryProps } from '@/types/dictionary'
-import Link from 'next/link'
 
+import Link from 'next/link'
 import React from 'react'
 
 const Header: React.FC<DictionaryProps> = ({ dictionary, className }: HeaderProps) => {
