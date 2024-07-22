@@ -2,34 +2,12 @@
 
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 import { cn } from '@/lib/utils'
-import { general_routes } from '@/routes/general'
 import { DictionaryProps } from '@/types/dictionary'
 import { Github, Linkedin, Youtube } from 'lucide-react'
 
 import React from 'react'
 
 const Footer: React.FC<DictionaryProps> = ({ dictionary, className }: FooterProps) => {
-   const items = [
-      {
-         id: 1,
-         label: 'Home',
-         link: general_routes.home,
-         external: false
-      },
-      {
-         id: 1,
-         label: 'Área de conversão',
-         link: general_routes.converter,
-         external: false
-      },
-      {
-         id: 1,
-         label: 'GitHub',
-         link: 'https://github.com/rafaeelricco/converto-app',
-         external: true
-      }
-   ]
-
    return (
       <React.Fragment>
          <nav className={cn('absolute bottom-0 z-20 mx-auto w-screen py-8', className)}>
@@ -40,25 +18,27 @@ const Footer: React.FC<DictionaryProps> = ({ dictionary, className }: FooterProp
                      <Linkedin className="h-6 w-6 cursor-pointer text-white-900 antialiased hover:text-black-500" />
                      <Youtube className="h-6 w-6 cursor-pointer text-white-900 antialiased hover:text-black-500" />
                   </div>
-                  <Select>
-                     <SelectTrigger className="min-w-[175px]">
-                        <SelectValue
-                           placeholder={
-                              <React.Fragment>
-                                 <div>
-                                    <span className="font-sf-pro-display text-sm text-white-300">
-                                       Português (PT-BR)
-                                    </span>
-                                 </div>
-                              </React.Fragment>
-                           }
-                        />
-                     </SelectTrigger>
-                     <SelectContent>
-                        <SelectItem value="pt-BR">Português (PT-BR)</SelectItem>
-                        <SelectItem value="en-US">English (EN-US)</SelectItem>
-                     </SelectContent>
-                  </Select>
+                  <div className="hidden lg:block">
+                     <Select>
+                        <SelectTrigger className="min-w-[175px]">
+                           <SelectValue
+                              placeholder={
+                                 <React.Fragment>
+                                    <div>
+                                       <span className="font-sf-pro-display text-sm text-white-300">
+                                          Português (PT-BR)
+                                       </span>
+                                    </div>
+                                 </React.Fragment>
+                              }
+                           />
+                        </SelectTrigger>
+                        <SelectContent>
+                           <SelectItem value="pt-BR">Português (PT-BR)</SelectItem>
+                           <SelectItem value="en-US">English (EN-US)</SelectItem>
+                        </SelectContent>
+                     </Select>
+                  </div>
                </div>
                <div className="">
                   <span className="font-sf-pro-display text-sm text-white-900">
