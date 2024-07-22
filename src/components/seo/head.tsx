@@ -10,14 +10,7 @@ export const Head: React.FC<HeadProps> = ({ title, description }: HeadProps) => 
    return (
       <Helmet helmetData={helmetData} title={title}>
          <meta name="description" content={description} />
-         <link
-            rel="icon"
-            href={
-               theme == 'dark'
-                  ? 'https://res.cloudinary.com/dnqiosdb6/image/upload/v1720996473/Convertio_white_favicon_oyyley.ico'
-                  : 'https://res.cloudinary.com/dnqiosdb6/image/upload/v1720996480/Convertio_favicon_black_vbcc8x.ico'
-            }
-         />
+         <link rel="icon" href="/favicon.ico" sizes="any" />
       </Helmet>
    )
 }
