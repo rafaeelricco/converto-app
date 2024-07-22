@@ -11,7 +11,7 @@ import React from 'react'
 const HomeComponent: React.FC<HomeProps> = ({ dictionary }: HomeProps) => {
    return (
       <React.Fragment>
-         <div className="relative h-screen overflow-hidden">
+         <div className="relative min-h-screen overflow-hidden">
             <Header dictionary={dictionary} />
             <div className="container relative flex min-h-screen flex-col items-center justify-center">
                <div className="z-20 space-y-6">
