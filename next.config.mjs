@@ -24,6 +24,15 @@ const nextConfig = {
       fileLoaderRule.exclude = /\.svg$/i
 
       return config
+   },
+   async redirects() {
+      return [
+         {
+            source: '/pt',
+            destination: '/home',
+            permanent: true
+         }
+      ]
    }
 }
 
