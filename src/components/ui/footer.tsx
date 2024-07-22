@@ -11,9 +11,9 @@ const Footer: React.FC<DictionaryProps> = ({ dictionary, className }: FooterProp
    return (
       <React.Fragment>
          <nav className={cn('absolute bottom-0 z-20 mx-auto w-screen py-8', className)}>
-            <div className="container flex items-center justify-between">
+            <div className="container grid items-center justify-center space-y-4 lg:flex lg:justify-between lg:space-y-0">
                <div className="grid grid-flow-col gap-12">
-                  <div className="grid grid-flow-col items-center gap-4">
+                  <div className="grid grid-flow-col content-center items-center justify-center gap-4 lg:content-normal lg:justify-start">
                      <Github className="h-6 w-6 cursor-pointer text-white-900 antialiased hover:text-black-500" />
                      <Linkedin className="h-6 w-6 cursor-pointer text-white-900 antialiased hover:text-black-500" />
                      <Youtube className="h-6 w-6 cursor-pointer text-white-900 antialiased hover:text-black-500" />
