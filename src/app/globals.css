@@ -168,6 +168,14 @@ textarea {
    }
 }
 
+p,
+a,
+ul,
+li,
+button {
+   font-family: -apple-system, BlinkMacSystemFont, sans-serif !important;
+}
+
 input:-webkit-autofill::first-line {
    background-color: transparent;
 }
