@@ -1,2 +1,3 @@
-export * from '@/components/svgs/Grid'
-export * from '@/components/svgs/Logo'
+export * from '@/components/svgs/grid'
+export * from '@/components/svgs/header'
+export * from '@/components/svgs/logo'

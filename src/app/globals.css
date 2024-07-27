@@ -2,90 +2,64 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
-@media (prefers-color-scheme: light) {
-   :root {
-      --favicon: url('https://res.cloudinary.com/dnqiosdb6/image/upload/v1720996480/Convertio_favicon_black_vbcc8x.ico');
-   }
-}
-
-@media (prefers-color-scheme: dark) {
-   :root {
-      --favicon: url('https://res.cloudinary.com/dnqiosdb6/image/upload/v1720996473/Convertio_white_favicon_oyyley.ico');
-   }
-}
-
-link[rel='icon'] {
-   content: var(--favicon);
-}
-
 @font-face {
    font-family: 'Atyp Display';
    src: url('../../public/fonts/AtypDisplay-Light.ttf') format('truetype');
    font-weight: 300;
-   font-style: normal;
 }
 
 @font-face {
    font-family: 'Atyp Display';
    src: url('../../public/fonts/AtypDisplay-Medium.ttf') format('truetype');
    font-weight: 500;
-   font-style: normal;
 }
 
 @font-face {
    font-family: 'Atyp Display';
    src: url('../../public/fonts/AtypDisplay-Regular.ttf') format('truetype');
    font-weight: 400;
-   font-style: normal;
 }
 
 @font-face {
    font-family: 'Atyp Display';
    src: url('../../public/fonts/AtypDisplay-Semibold.ttf') format('truetype');
    font-weight: 600;
-   font-style: normal;
 }
 
 @font-face {
    font-family: 'Atyp Display';
    src: url('../../public/fonts/AtypDisplay-Bold.ttf') format('truetype');
    font-weight: 700;
-   font-style: normal;
 }
 
 @font-face {
    font-family: 'Atyp Text';
    src: url('../../public/fonts/AtypText-Light.ttf') format('truetype');
    font-weight: 300;
-   font-style: normal;
 }
 
 @font-face {
    font-family: 'Atyp Text';
    src: url('../../public/fonts/AtypText-Medium.ttf') format('truetype');
    font-weight: 500;
-   font-style: normal;
 }
 
 @font-face {
    font-family: 'Atyp Text';
    src: url('../../public/fonts/AtypText-Regular.ttf') format('truetype');
    font-weight: 400;
-   font-style: normal;
 }
 
 @font-face {
    font-family: 'Atyp Text';
    src: url('../../public/fonts/AtypText-Semibold.ttf') format('truetype');
    font-weight: 600;
-   font-style: normal;
 }
 
 @font-face {
    font-family: 'Atyp Text';
    src: url('../../public/fonts/AtypText-Bold.ttf') format('truetype');
    font-weight: 700;
-   font-style: normal;
 }
 
 @font-face {
@@ -93,6 +67,8 @@ link[rel='icon'] {
    src: url('../../public/fonts/SF-Pro-Display-Light.otf') format('opentype');
    font-weight: 300;
    font-style: normal;
+   font-display: swap;
+   letter-spacing: 0.025em;
 }
 
 @font-face {
@@ -100,6 +76,8 @@ link[rel='icon'] {
    src: url('../../public/fonts/SF-Pro-Display-Medium.otf') format('opentype');
    font-weight: 500;
    font-style: normal;
+   font-display: swap;
+   letter-spacing: 0.025em;
 }
 
 @font-face {
@@ -107,6 +85,8 @@ link[rel='icon'] {
    src: url('../../public/fonts/SF-Pro-Display-Regular.otf') format('opentype');
    font-weight: 400;
    font-style: normal;
+   font-display: swap;
+   letter-spacing: 0.025em;
 }
 
 @font-face {
@@ -114,6 +94,8 @@ link[rel='icon'] {
    src: url('../../public/fonts/SF-Pro-Display-Semibold.otf') format('opentype');
    font-weight: 600;
    font-style: normal;
+   font-display: swap;
+   letter-spacing: 0.025em;
 }
 
 @font-face {
@@ -121,41 +103,38 @@ link[rel='icon'] {
    src: url('../../public/fonts/SF-Pro-Display-Bold.otf') format('opentype');
    font-weight: 700;
    font-style: normal;
+   font-display: swap;
+   letter-spacing: 0.025em;
 }
 
 @font-face {
    font-family: 'SF Mono';
    src: url('../../public/fonts/SF-Mono-Light.otf') format('opentype');
    font-weight: 300;
-   font-style: normal;
 }
 
 @font-face {
    font-family: 'SF Mono';
    src: url('../../public/fonts/SF-Mono-Medium.otf') format('opentype');
    font-weight: 500;
-   font-style: normal;
 }
 
 @font-face {
    font-family: 'SF Mono';
    src: url('../../public/fonts/SF-Mono-Regular.otf') format('opentype');
    font-weight: 400;
-   font-style: normal;
 }
 
 @font-face {
    font-family: 'SF Mono';
    src: url('../../public/fonts/SF-Mono-Semibold.otf') format('opentype');
    font-weight: 600;
-   font-style: normal;
 }
 
 @font-face {
    font-family: 'SF Mono';
    src: url('../../public/fonts/SF-Mono-Bold.otf') format('opentype');
    font-weight: 700;
-   font-style: normal;
 }
 
 * {
