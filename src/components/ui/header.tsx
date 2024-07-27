@@ -27,14 +27,24 @@ const Header: React.FC<DictionaryProps> = ({ dictionary, className }: HeaderProp
                               <TooltipProvider>
                                  <Tooltip>
                                     <TooltipTrigger asChild>
-                                       <Link
-                                          href={item.link}
-                                          className="flex-shrink cursor-pointer font-sf-pro-display text-black-500 hover:text-black-500/80 hover:underline"
-                                          target={item.external ? '_blank' : '_self'}
-                                          rel={item.external ? 'noreferrer' : undefined}
-                                       >
-                                          {item.label}
-                                       </Link>
+                                       <div>
+                                          {item.disabled ? (
+                                             <React.Fragment>
+                                                <p className="flex-shrink cursor-default font-sf-pro-display text-black-500 opacity-50">
+                                                   {item.label}
+                                                </p>
+                                             </React.Fragment>
+                                          ) : (
+                                             <Link
+                                                href={item.link}
+                                                className="flex-shrink cursor-pointer font-sf-pro-display text-black-500 hover:text-black-500/80 hover:underline"
+                                                target={item.external ? '_blank' : '_self'}
+                                                rel={item.external ? 'noreferrer' : undefined}
+                                             >
+                                                {item.label}
+                                             </Link>
+                                          )}
+                                       </div>
                                     </TooltipTrigger>
                                     <TooltipContent side="bottom">
                                        <p className="font-sf-pro-display text-base">{item.tooltip}</p>
@@ -103,8 +113,8 @@ const items = [
    {
       id: 3,
       label: 'Conversão',
-      tooltip: 'Área de conversão de arquivos.',
-      disabled: false,
+      tooltip: 'Esta funcionalidade estará disponível no futuro.',
+      disabled: true,
       link: general_routes.converter,
       external: false
    },

@@ -141,6 +141,7 @@
    margin: 0;
    padding: 0;
    box-sizing: border-box;
+   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 body {
@@ -155,13 +156,6 @@ body {
 body,
 input,
 textarea {
-   font:
-      400 1rem 'SF Pro Display',
-      -apple-system,
-      BlinkMacSystemFont,
-      'Segoe UI',
-      sans-serif;
-
    input[type='number']::-webkit-inner-spin-,
    input[type='number']::-webkit-outer-spin- {
       -webkit-appearance: none;
