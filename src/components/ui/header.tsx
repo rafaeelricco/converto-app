@@ -15,7 +15,7 @@ import React from 'react'
 const Header: React.FC<DictionaryProps> = ({ dictionary, className }: HeaderProps) => {
    return (
       <React.Fragment>
-         <nav className={cn('absolute z-20 mx-auto w-screen py-8', className)}>
+         <nav className={cn('w-screen py-8', className)}>
             <div className="container flex items-center justify-between">
                <LogoCircle className="h-10 w-10 antialiased" />
                <div className="grid grid-cols-2 items-center gap-12">
