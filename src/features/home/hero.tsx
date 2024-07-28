@@ -12,7 +12,9 @@ const HomeComponent: React.FC<HomeProps> = ({ dictionary }: HomeProps) => {
    return (
       <React.Fragment>
          <div className="relative min-h-screen overflow-hidden">
-            <Header dictionary={dictionary} />
+            <div className="absolute left-0 top-0 z-50">
+               <Header dictionary={dictionary} />
+            </div>
             <div className="container relative mb-10 flex min-h-screen flex-col items-center justify-center lg:mb-0">
                <div className="z-20 space-y-6">
                   <Logo className="h-12 w-full fill-black-200 antialiased md:h-14 lg:h-16" />

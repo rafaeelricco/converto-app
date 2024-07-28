@@ -1,7 +1,6 @@
 'use client'
 
 import { LogoCircle, PanelLeftIcon } from '@/components/svgs'
-import { Input } from '@/components/ui/input'
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip'
 import { cn } from '@/lib/utils'
@@ -18,8 +17,8 @@ const Header: React.FC<DictionaryProps> = ({ dictionary, className }: HeaderProp
          <nav className={cn('w-screen py-8', className)}>
             <div className="container flex items-center justify-between">
                <LogoCircle className="h-10 w-10 antialiased" />
-               <div className="grid grid-cols-2 items-center gap-12">
-                  <Input placeholder="Pesquisar conversão" className="hidden lg:block" />
+               <div className="grid items-center gap-12">
+                  {/* <Input placeholder="Pesquisar conversão" className="hidden lg:block" /> */}
                   <div className="hidden grid-flow-col gap-12 lg:grid">
                      {items.map((item, index) => (
                         <ul className="w-full" key={item.id + index}>

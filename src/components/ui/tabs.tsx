@@ -1,7 +1,7 @@
 'use client'
 
-import * as React from 'react'
 import * as TabsPrimitive from '@radix-ui/react-tabs'
+import * as React from 'react'
 
 import { cn } from '@/lib/utils'
 
@@ -14,7 +14,7 @@ const TabsList = React.forwardRef<
    <TabsPrimitive.List
       ref={ref}
       className={cn(
-         'inline-flex h-10 items-center justify-center rounded-md bg-slate-100 p-1 text-slate-500 dark:bg-slate-800 dark:text-slate-400',
+         'inline-flex items-center justify-center rounded-lg bg-[#F4F4F4] p-1.5 text-slate-500 dark:bg-slate-800 dark:text-slate-400',
          className
       )}
       {...props}
@@ -29,7 +29,7 @@ const TabsTrigger = React.forwardRef<
    <TabsPrimitive.Trigger
       ref={ref}
       className={cn(
-         'ring-offset-white data-[state=active]:bg-white inline-flex items-center justify-center whitespace-nowrap rounded-sm px-3 py-1.5 text-sm font-medium transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:text-slate-950 data-[state=active]:shadow-sm dark:ring-offset-slate-950 dark:focus-visible:ring-slate-300 dark:data-[state=active]:bg-slate-950 dark:data-[state=active]:text-slate-50',
+         'inline-flex cursor-default items-center justify-center whitespace-nowrap rounded-lg px-3 py-1.5 font-sf-pro-display text-sm font-medium text-white-100 ring-offset-white-250 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-black-500 data-[state=active]:text-slate-950 data-[state=active]:shadow-sm dark:ring-offset-slate-950 dark:focus-visible:ring-slate-300 dark:data-[state=active]:bg-slate-950 dark:data-[state=active]:text-slate-50',
          className
       )}
       {...props}
@@ -44,7 +44,7 @@ const TabsContent = React.forwardRef<
    <TabsPrimitive.Content
       ref={ref}
       className={cn(
-         'ring-offset-white mt-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2 dark:ring-offset-slate-950 dark:focus-visible:ring-slate-300',
+         'ring-offset-white mt-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2 dark:ring-offset-slate-950 dark:focus-visible:ring-slate-300',
          className
       )}
       {...props}
@@ -52,4 +52,4 @@ const TabsContent = React.forwardRef<
 ))
 TabsContent.displayName = TabsPrimitive.Content.displayName
 
-export { Tabs, TabsList, TabsTrigger, TabsContent }
+export { Tabs, TabsContent, TabsList, TabsTrigger }
