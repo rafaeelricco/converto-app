@@ -7,15 +7,15 @@ const config = {
    theme: {
       container: {
          center: true,
-         padding: '2rem',
-         screens: {
-            '2xl': '1400px'
-         }
+         padding: '2rem'
       },
       extend: {
          container: {
             center: true,
-            padding: '1rem'
+            padding: '1rem',
+            screens: {
+               '2xl': '1636px'
+            }
          },
          fontFamily: {
             'atyp-text': ['Atyp Text', 'sans-serif'],

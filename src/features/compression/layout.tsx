@@ -20,10 +20,10 @@ export default async function CompressionAreaLayout({
             title="Área de compressão | Transformar seus arquivos é simples e rápido."
             description="A solução gratuita para todas as suas necessidades de conversão de arquivos."
          />
-         <div className="relative grid h-screen content-between overflow-hidden">
+         <div className="relative grid min-h-screen content-between overflow-hidden">
             <Header dictionary={dictionary} />
             {children}
-            <div className="h-[98px]">
+            <div className="mt-8 h-[98px] lg:mt-0">
                <Footer dictionary={dictionary} />
             </div>
          </div>

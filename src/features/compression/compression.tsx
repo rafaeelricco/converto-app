@@ -1,8 +1,8 @@
 'use client'
 
 import * as Icon from '@/components/svgs/compression-level'
-import { Button } from '@/components/ui/button'
 
+import { Button } from '@/components/ui/button'
 import { Dropzone } from '@/components/ui/dropzone'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { cn } from '@/lib/utils'
@@ -18,7 +18,7 @@ enum TabOptions {
 const CompressionArea: React.FC<HomeProps> = ({ dictionary }: HomeProps) => {
    return (
       <React.Fragment>
-         <div className="container grid grid-cols-[0.75fr_1fr] gap-6">
+         <div className="container grid gap-6 lg:grid-cols-[0.75fr_1fr]">
             <div className="space-y-4 rounded-lg border border-white-250 p-4">
                <Dropzone />
                <div className="flex flex-1 flex-col gap-4">
