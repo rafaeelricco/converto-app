@@ -16,6 +16,7 @@ enum TabOptions {
 }
 
 const CompressionArea: React.FC<HomeProps> = ({ dictionary }: HomeProps) => {
+   const [level, setLevel] = React.useState<'low' | 'medium' | 'high' | null>(null)
    return (
       <React.Fragment>
          <div className="container grid gap-6 lg:grid-cols-[0.75fr_1fr]">
@@ -36,13 +37,14 @@ const CompressionArea: React.FC<HomeProps> = ({ dictionary }: HomeProps) => {
                      </TabsList>
                      <TabsContent value={TabOptions.COMPRESSION_LEVEL}>
                         <div className="space-y-4">
-                           <CompressionOption level="low" selected={false} onSelect={(level) => console.log(level)} />
-                           <CompressionOption
-                              level="medium"
-                              selected={false}
-                              onSelect={(level) => console.log(level)}
-                           />
-                           <CompressionOption level="high" selected={false} onSelect={(level) => console.log(level)} />
+                           {levels_options.map((l) => (
+                              <CompressionOption
+                                 key={l.id}
+                                 level={l.value as 'low' | 'medium' | 'high'}
+                                 selected={l.value === level || false}
+                                 onSelect={(level) => setLevel(level)}
+                              />
+                           ))}
                            <Button className="w-full" onClick={() => console.log('Comprimir')}>
                               Iniciar compressão
                            </Button>
@@ -91,7 +93,8 @@ const CompressionOption: React.FC<CompressionOptionProps> = ({ level, selected, 
             className={cn(
                'grid cursor-default grid-cols-[24px_auto] items-center gap-4 rounded-lg border border-white-250 px-4 py-2',
                {
-                  'bg-black-500': selected
+                  'bg-black-500': selected,
+                  '[&_svg]:invert': selected
                }
             )}
          >
@@ -116,6 +119,24 @@ const CompressionOption: React.FC<CompressionOptionProps> = ({ level, selected, 
       </React.Fragment>
    )
 }
+
+const levels_options = [
+   {
+      id: '1',
+      label: 'Baixo',
+      value: 'low'
+   },
+   {
+      id: '2',
+      label: 'Médio',
+      value: 'medium'
+   },
+   {
+      id: '3',
+      label: 'Alto',
+      value: 'high'
+   }
+]
 
 type HomeProps = {
    dictionary: DictionaryProps['dictionary']

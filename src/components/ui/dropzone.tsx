@@ -4,10 +4,6 @@ import { useDropzone } from 'react-dropzone'
 
 import React from 'react'
 
-type DropzoneProps = {
-   onDropFiles: (files: File[]) => void
-}
-
 const Dropzone: React.FC<DropzoneProps> = ({ onDropFiles }: DropzoneProps) => {
    const { getRootProps, getInputProps, isFocused, isDragAccept, isDragReject } = useDropzone({
       accept: { 'application/pdf': [] },
@@ -40,6 +36,10 @@ const Dropzone: React.FC<DropzoneProps> = ({ onDropFiles }: DropzoneProps) => {
          </div>
       </div>
    )
+}
+
+type DropzoneProps = {
+   onDropFiles: (files: File[]) => void
 }
 
 export { Dropzone }

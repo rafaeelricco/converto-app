@@ -1,6 +1,6 @@
 function LowLevel(props: React.SVGProps<SVGSVGElement>) {
    return (
-      <svg viewBox="0 0 17 15" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+      <svg id="low-level" viewBox="0 0 17 15" xmlns="http://www.w3.org/2000/svg" {...props}>
          <circle cx={1} cy={13.5} r={1} fill="#030303" />
          <circle cx={6} cy={13.5} r={1} fill="#030303" />
          <circle cx={11} cy={13.5} r={0.5} fill="#B4B4B4" stroke="#B4B4B4" />
@@ -16,7 +16,7 @@ function LowLevel(props: React.SVGProps<SVGSVGElement>) {
 
 function MediumLevel(props: React.SVGProps<SVGSVGElement>) {
    return (
-      <svg viewBox="0 0 17 15" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+      <svg id="medium-level" viewBox="0 0 17 15" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
          <circle cx={1} cy={13.5} r={0.5} fill="#030303" stroke="#030303" />
          <circle cx={6} cy={13.5} r={0.5} fill="#030303" stroke="#030303" />
          <circle cx={11} cy={13.5} r={0.5} fill="#030303" stroke="#030303" />
@@ -32,7 +32,7 @@ function MediumLevel(props: React.SVGProps<SVGSVGElement>) {
 
 function HighLevel(props: React.SVGProps<SVGSVGElement>) {
    return (
-      <svg viewBox="0 0 17 15" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+      <svg id="high-level" viewBox="0 0 17 15" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
          <circle cx={1} cy={13.5} r={0.5} fill="#030303" stroke="#030303" />
          <circle cx={6} cy={13.5} r={0.5} fill="#030303" stroke="#030303" />
          <circle cx={11} cy={13.5} r={0.5} fill="#030303" stroke="#030303" />
