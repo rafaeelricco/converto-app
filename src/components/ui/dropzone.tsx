@@ -1,40 +1,20 @@
 import { cn } from '@/lib/utils'
 import { CloudUpload } from 'lucide-react'
-import React from 'react'
 import { useDropzone } from 'react-dropzone'
 
-// const getColor = (props) => {
-//   if (props.isDragAccept) {
-//       return '#00e676';
-//   }
-//   if (props.isDragReject) {
-//       return '#ff1744';
-//   }
-//   if (props.isFocused) {
-//       return '#2196f3';
-//   }
-//   return '#eeeeee';
-// }
+import React from 'react'
 
-// const Container = styled.div`
-//   flex: 1;
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-//   padding: 20px;
-//   border-width: 2px;
-//   border-radius: 2px;
-//   border-color: ${props => getColor(props)};
-//   border-style: dashed;
-//   background-color: #fafafa;
-//   color: #bdbdbd;
-//   outline: none;
-//   transition: border .24s ease-in-out;
-// `;
+type DropzoneProps = {
+   onDropFiles: (files: File[]) => void
+}
 
-const Dropzone: React.FC = (props) => {
+const Dropzone: React.FC<DropzoneProps> = ({ onDropFiles }: DropzoneProps) => {
    const { getRootProps, getInputProps, isFocused, isDragAccept, isDragReject } = useDropzone({
-      accept: { 'application/pdf': [] }
+      accept: { 'application/pdf': [] },
+      onDrop: (acceptedFiles) => {
+         console.log('acceptedFiles', acceptedFiles)
+         onDropFiles(acceptedFiles)
+      }
    })
 
    return (

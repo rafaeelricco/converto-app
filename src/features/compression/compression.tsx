@@ -20,7 +20,7 @@ const CompressionArea: React.FC<HomeProps> = ({ dictionary }: HomeProps) => {
       <React.Fragment>
          <div className="container grid gap-6 lg:grid-cols-[0.75fr_1fr]">
             <div className="space-y-4 rounded-lg border border-white-250 p-4">
-               <Dropzone />
+               <Dropzone onDropFiles={(files) => console.log('files', files)} />
                <div className="flex flex-1 flex-col gap-4">
                   <div className="space-y-1">
                      <p className="text-base font-semibold">Configurações de compressão</p>
@@ -31,12 +31,8 @@ const CompressionArea: React.FC<HomeProps> = ({ dictionary }: HomeProps) => {
                   </div>
                   <Tabs defaultValue={TabOptions.COMPRESSION_LEVEL}>
                      <TabsList className="grid w-full grid-cols-2 gap-2">
-                        <TabsTrigger value={TabOptions.COMPRESSION_LEVEL}>
-                           <span className="text-base font-medium text-white-100">Nível de compressão</span>
-                        </TabsTrigger>
-                        <TabsTrigger value={TabOptions.ADVANCED_SETTINGS}>
-                           <span className="text-base font-medium text-white-100">Configurações avançadas</span>
-                        </TabsTrigger>
+                        <TabsTrigger value={TabOptions.COMPRESSION_LEVEL}>Nível de compressão</TabsTrigger>
+                        <TabsTrigger value={TabOptions.ADVANCED_SETTINGS}>Configurações avançadas</TabsTrigger>
                      </TabsList>
                      <TabsContent value={TabOptions.COMPRESSION_LEVEL}>
                         <div className="space-y-4">
