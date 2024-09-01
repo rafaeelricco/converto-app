@@ -1,4 +1,4 @@
-import { cn } from '@/lib/utils'
+import { cn } from '@/utils/cn'
 import { CloudUpload } from 'lucide-react'
 import { useDropzone } from 'react-dropzone'
 
@@ -16,7 +16,7 @@ const Dropzone: React.FC<DropzoneProps> = ({ onDropFiles }: DropzoneProps) => {
    return (
       <div
          className={cn(
-            'flex h-auto w-full flex-1 flex-col items-center justify-center rounded-lg border border-dashed border-white-500 bg-transparent py-8 transition-all duration-300',
+            'flex h-auto w-full flex-1 border-spacing-1 flex-col items-center justify-center rounded-lg border border-dashed border-white-500 bg-transparent py-8 transition-all duration-300',
             {
                'border-black-500': isFocused,
                'border-green-500': isDragAccept,

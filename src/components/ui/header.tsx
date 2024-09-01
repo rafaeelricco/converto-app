@@ -3,9 +3,9 @@
 import { LogoCircle, PanelLeftIcon } from '@/components/svgs'
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip'
-import { cn } from '@/lib/utils'
 import { general_routes } from '@/routes/general'
 import { DictionaryProps } from '@/types/dictionary'
+import { cn } from '@/utils/cn'
 import { Button } from 'components/ui/button'
 
 import Link from 'next/link'

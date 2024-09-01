@@ -5,8 +5,8 @@ import * as Icon from '@/components/svgs/compression-level'
 import { Button } from '@/components/ui/button'
 import { Dropzone } from '@/components/ui/dropzone'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
-import { cn } from '@/lib/utils'
 import { DictionaryProps } from '@/types/dictionary'
+import { cn } from '@/utils/cn'
 
 import React from 'react'
 
@@ -17,11 +17,12 @@ enum TabOptions {
 
 const CompressionArea: React.FC<HomeProps> = ({ dictionary }: HomeProps) => {
    const [level, setLevel] = React.useState<'low' | 'medium' | 'high' | null>(null)
+   const [files, setFiles] = React.useState<File[]>([])
    return (
       <React.Fragment>
          <div className="container grid gap-6 lg:grid-cols-[0.75fr_1fr]">
             <div className="space-y-4 rounded-lg border border-white-250 p-4">
-               <Dropzone onDropFiles={(files) => console.log('files', files)} />
+               <Dropzone onDropFiles={(files) => setFiles(files)} />
                <div className="flex flex-1 flex-col gap-4">
                   <div className="space-y-1">
                      <p className="text-base font-semibold">Configurações de compressão</p>
@@ -54,7 +55,9 @@ const CompressionArea: React.FC<HomeProps> = ({ dictionary }: HomeProps) => {
                   </Tabs>
                </div>
             </div>
-            <div className="min-h-[632px] rounded-lg border border-white-250 p-4">container 2</div>
+            <div className="min-h-[632px] rounded-lg border border-white-250 p-4">
+               <div></div>
+            </div>
          </div>
       </React.Fragment>
    )

@@ -27,7 +27,8 @@
          "@/hooks/*": ["./src/hooks/*"],
          "@/fonts/*": ["./src/public/fonts/*"],
          "@/dictionaries/*": ["./src/dictionaries/*"],
-         "@/features/*": ["./src/features/*"]
+         "@/features/*": ["./src/features/*"],
+         "@/utils/*": ["./src/utils/*"]
       }
    },
    "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
