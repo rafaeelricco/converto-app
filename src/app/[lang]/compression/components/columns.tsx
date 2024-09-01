@@ -34,14 +34,14 @@ export const columns: ColumnDef<Task>[] = [
    },
    {
       accessorKey: 'id',
-      header: ({ column }) => <DataTableColumnHeader column={column} title="Task" />,
+      header: ({ column }) => <DataTableColumnHeader column={column} title="Id" />,
       cell: ({ row }) => <div className="w-[80px]">{row.getValue('id')}</div>,
       enableSorting: false,
       enableHiding: false
    },
    {
       accessorKey: 'title',
-      header: ({ column }) => <DataTableColumnHeader column={column} title="Title" />,
+      header: ({ column }) => <DataTableColumnHeader column={column} title="Nome do arquivo" />,
       cell: ({ row }) => {
          const label = labels.find((label) => label.value === row.original.label)
 
@@ -76,7 +76,7 @@ export const columns: ColumnDef<Task>[] = [
    },
    {
       accessorKey: 'priority',
-      header: ({ column }) => <DataTableColumnHeader column={column} title="Priority" />,
+      header: ({ column }) => <DataTableColumnHeader column={column} title="Nível de compressão" />,
       cell: ({ row }) => {
          const priority = priorities.find((priority) => priority.value === row.getValue('priority'))
 
@@ -97,6 +97,7 @@ export const columns: ColumnDef<Task>[] = [
    },
    {
       id: 'actions',
+      header: ({ column }) => <DataTableColumnHeader column={column} title="Ações" />,
       cell: ({ row }) => <DataTableRowActions row={row} />
    }
 ]
