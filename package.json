@@ -30,7 +30,6 @@
       "date-fns": "^3.6.0",
       "html-react-parser": "^5.1.10",
       "keen-slider": "^6.8.6",
-      "lodash": "^4.17.21",
       "lucide": "^0.330.0",
       "lucide-react": "^0.407.0",
       "next": "14.2.4",
@@ -51,6 +50,7 @@
    },
    "devDependencies": {
       "@svgr/webpack": "^8.1.0",
+      "@types/lodash": "^4.17.7",
       "@types/node": "^20",
       "@types/react": "^18",
       "@types/react-dom": "^18",
@@ -60,6 +60,7 @@
       "cookies-next": "^4.2.1",
       "eslint": "^8",
       "eslint-config-next": "14.2.4",
+      "lodash": "^4.17.21",
       "postcss": "^8",
       "postcss-import": "^16.1.0",
       "postcss-nesting": "^12.1.5",

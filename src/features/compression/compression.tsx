@@ -2,15 +2,15 @@
 
 import * as Icon from '@/components/svgs/compression-level'
 
-import { columns } from '@/app/[lang]/compression/components/columns'
-import { DataTable } from '@/app/[lang]/compression/components/data-table'
-
 import { Button } from '@/components/ui/button'
 import { Dropzone } from '@/components/ui/dropzone'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { DictionaryProps } from '@/types/dictionary'
 import { cn } from '@/utils/cn'
 
+import { columns } from '@/app/[lang]/compression/components/columns'
+import { DataTable } from '@/app/[lang]/compression/components/data-table'
+import { FileProgress } from '@/types/websocket'
 import React from 'react'
 
 enum TabOptions {
@@ -18,86 +18,53 @@ enum TabOptions {
    ADVANCED_SETTINGS = 'advanced_settings'
 }
 
+const fileReducer = (state: FileProgress, action: FileProgress): FileProgress => {
+   const updated_files = action.files.reduce(
+      (acc, file) => {
+         const fileIndex = acc.findIndex((f) => f.id === file.id)
+         if (fileIndex >= 0) {
+            acc[fileIndex] = file
+         } else {
+            acc.push(file)
+         }
+         return acc
+      },
+      [...state.files]
+   )
+
+   return { ...state, id: action.id, files: updated_files, status: action.status }
+}
+
 const CompressionArea: React.FC<HomeProps> = ({ dictionary }: HomeProps) => {
    const [level, setLevel] = React.useState<'low' | 'medium' | 'high' | null>(null)
-   const [files, setFiles] = React.useState<File[]>([])
-   const tasks = [
-      {
-         id: 'TASK-8782',
-         title: "You can't compress the program without quantifying the open-source SSD pixel!",
-         status: 'in progress',
-         label: 'documentation',
-         priority: 'medium'
-      },
-      {
-         id: 'TASK-7878',
-         title: 'Try to calculate the EXE feed, maybe it will index the multi-byte pixel!',
-         status: 'backlog',
-         label: 'documentation',
-         priority: 'medium'
-      },
-      {
-         id: 'TASK-7839',
-         title: 'We need to bypass the neural TCP card!',
-         status: 'todo',
-         label: 'bug',
-         priority: 'high'
-      },
-      {
-         id: 'TASK-5562',
-         title: 'The SAS interface is down, bypass the open-source pixel so we can back up the PNG bandwidth!',
-         status: 'backlog',
-         label: 'feature',
-         priority: 'medium'
-      },
-      {
-         id: 'TASK-8686',
-         title: "I'll parse the wireless SSL protocol, that should driver the API panel!",
-         status: 'canceled',
-         label: 'feature',
-         priority: 'medium'
-      },
-      {
-         id: 'TASK-1280',
-         title: 'Use the digital TLS panel, then you can transmit the haptic system!',
-         status: 'done',
-         label: 'bug',
-         priority: 'high'
-      },
-      {
-         id: 'TASK-7262',
-         title: 'The UTF8 application is down, parse the neural bandwidth so we can back up the PNG firewall!',
-         status: 'done',
-         label: 'feature',
-         priority: 'high'
-      },
-      {
-         id: 'TASK-1138',
-         title: "Generating the driver won't do anything, we need to quantify the 1080p SMTP bandwidth!",
-         status: 'in progress',
-         label: 'feature',
-         priority: 'medium'
-      },
-      {
-         id: 'TASK-7184',
-         title: 'We need to program the back-end THX pixel!',
-         status: 'todo',
-         label: 'feature',
-         priority: 'low'
-      },
-      {
-         id: 'TASK-5160',
-         title: "Calculating the bus won't do anything, we need to navigate the back-end JSON protocol!",
-         status: 'in progress',
-         label: 'documentation',
-         priority: 'high'
+   const [state, dispatch] = React.useReducer(fileReducer, { id: '', files: [], status: 'disconnected' })
+   console.log('state', state)
+
+   React.useEffect(() => {
+      let id = 'bf4bc249-1833-4456-9b71-90ca23a7b200'
+
+      let url = `ws://127.0.0.1:10000/ws?id=${id}`
+      const ws = new WebSocket(url)
+
+      ws.onopen = (event) => {
+         console.log('Conexão WebSocket aberta', event)
+         dispatch({ id, status: 'connected', files: [] })
       }
-   ]
+
+      ws.onmessage = (event) => {
+         const data: FileProgress = JSON.parse(event.data)
+         dispatch(data)
+      }
+
+      ws.onclose = (event) => console.warn('Conexão WebSocket fechada', event)
+      ws.onerror = (event) => console.error('Erro na conexão WebSocket', event)
+   }, [])
+
    return (
       <React.Fragment>
-         <div className="container grid gap-6 lg:grid-cols-[0.75fr_1fr]">
+         <div className="container grid gap-6 lg:grid-cols-[0.75fr_auto]">
             <div className="space-y-4 rounded-lg border border-white-250 p-4">
-               <Dropzone onDropFiles={(files) => setFiles(files)} />
+               <Dropzone onDropFiles={(files) => {}} />
                <div className="flex flex-1 flex-col gap-4">
                   <div className="space-y-1">
                      <p className="text-base font-semibold">Configurações de compressão</p>
@@ -121,7 +88,7 @@ const CompressionArea: React.FC<HomeProps> = ({ dictionary }: HomeProps) => {
                                  onSelect={(level) => setLevel(level)}
                               />
                            ))}
-                           <Button className="w-full" onClick={() => console.log('Comprimir')}>
+                           <Button className="w-full" onClick={() => {}}>
                               Iniciar compressão
                            </Button>
                         </div>
@@ -132,7 +99,7 @@ const CompressionArea: React.FC<HomeProps> = ({ dictionary }: HomeProps) => {
             </div>
             <div className="min-h-[632px] rounded-lg border border-white-250 p-4">
                <div>
-                  <DataTable data={tasks} columns={columns} />
+                  <DataTable data={state.files} columns={columns} />
                </div>
             </div>
          </div>
