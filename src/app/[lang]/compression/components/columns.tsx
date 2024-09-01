@@ -65,28 +65,6 @@ export const columns: ColumnDef<Progress>[] = [
          return <div className="text-sm font-medium">{row.getValue('file_name')}</div>
       }
    },
-   //    {
-   //       accessorKey: 'status',
-   //       header: ({ column }) => <DataTableColumnHeader column={column} title="Status" />,
-   //       cell: ({ row }) => {
-   //          //  const status = statuses.find((status) => status.value === row.getValue('status'))
-
-   //          //  if (!status) {
-   //          //     return null
-   //          //  }
-
-   //          //  return (
-   //          //     <div className="flex w-[100px] items-center">
-   //          //        {status.icon && <status.icon className="text-muted-foreground mr-2 h-4 w-4" />}
-   //          //        <span className="text-sm font-medium">{status.label}</span>
-   //          //     </div>
-   //          //  )
-   //          return <div className="text-sm font-medium">{row.getValue('status')}</div>
-   //       },
-   //       filterFn: (row, id, value) => {
-   //          return value.includes(row.getValue(id))
-   //       }
-   //    },
    {
       accessorKey: 'progress',
       header: ({ column }) => <DataTableColumnHeader column={column} title="Status" />,
@@ -98,22 +76,10 @@ export const columns: ColumnDef<Progress>[] = [
       }
    },
    {
-      accessorKey: 'priority',
+      accessorKey: 'compression_level',
       header: ({ column }) => <DataTableColumnHeader column={column} title="Nível de compressão" />,
       cell: ({ row }) => {
-         //  const priority = priorities.find((priority) => priority.value === row.getValue('priority'))
-
-         //  if (!priority) {
-         //     return null
-         //  }
-
-         //  return (
-         //     <div className="flex items-center">
-         //        {priority.icon && <priority.icon className="text-muted-foreground mr-2 h-4 w-4" />}
-         //        <span className="text-sm font-medium">{priority.label}</span>
-         //     </div>
-         //  )
-         return <div className="text-sm font-medium">{row.getValue('priority')}</div>
+         return <div className="text-sm font-medium">{row.getValue('compression_level') || 'Médio'}</div>
       },
       filterFn: (row, id, value) => {
          return value.includes(row.getValue(id))

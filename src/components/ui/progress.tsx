@@ -2,7 +2,7 @@ const ProgressCircle: React.FC<{ progress: number }> = ({ progress }) => {
    const stroke_dash_offset = 100 - progress
 
    return (
-      <div className="relative size-40">
+      <div className="relative size-4">
          <svg className="size-full -rotate-90" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg">
             {/* <!-- Background Circle --> */}
             <circle
@@ -11,7 +11,7 @@ const ProgressCircle: React.FC<{ progress: number }> = ({ progress }) => {
                r="16"
                fill="none"
                className="stroke-current text-[#D9D9D9]"
-               stroke-width="2"
+               stroke-width="4"
             ></circle>
             {/*  <!-- Progress Circle --> */}
             <circle
@@ -20,7 +20,7 @@ const ProgressCircle: React.FC<{ progress: number }> = ({ progress }) => {
                r="16"
                fill="none"
                className="stroke-current text-[#2D2D2D]"
-               stroke-width="2"
+               stroke-width="4"
                stroke-dasharray="100"
                stroke-dashoffset={stroke_dash_offset}
                stroke-linecap="round"

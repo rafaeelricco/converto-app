@@ -5,6 +5,7 @@ type Progress = {
    file_name?: string
    progress: number
    message: string
+   compression_level?: string
 }
 
 type FileProgress = {
