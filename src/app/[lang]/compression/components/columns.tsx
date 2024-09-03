@@ -34,7 +34,7 @@ export const columns: ColumnDef<Progress>[] = [
    },
    {
       accessorKey: 'id',
-      header: ({ column }) => <DataTableColumnHeader column={column} title="Id" />,
+      header: ({ column }) => <DataTableColumnHeader column={column} title="ID" />,
       cell: ({ row }) => (
          <div className="w-[80px] text-sm font-medium text-black-500">
             {truncate(String(row.getValue('id')), { length: 10 })}
@@ -43,21 +43,6 @@ export const columns: ColumnDef<Progress>[] = [
       enableSorting: false,
       enableHiding: false
    },
-   //    {
-   //       accessorKey: 'title',
-   //       header: ({ column }) => <DataTableColumnHeader column={column} title="Nome do arquivo" />,
-   //       cell: ({ row }) => {
-   //          //  const label = labels.find((label) => label.value === row.original.label)
-
-   //          //  return (
-   //          //     <div className="flex space-x-2">
-   //          //        {label && <Badge variant="default">{label.label}</Badge>}
-   //          //        <span className="max-w-[30ch] truncate text-sm font-medium">{row.getValue('title')}</span>
-   //          //     </div>
-   //          //  )
-   //          return <div className="text-sm font-medium">{row.getValue('title')}</div>
-   //       }
-   //    },
    {
       accessorKey: 'file_name',
       header: ({ column }) => <DataTableColumnHeader column={column} title="Nome do arquivo" />,
@@ -69,7 +54,17 @@ export const columns: ColumnDef<Progress>[] = [
       accessorKey: 'progress',
       header: ({ column }) => <DataTableColumnHeader column={column} title="Status" />,
       cell: ({ row }) => {
-         return <ProgressCircle progress={row.getValue('progress')} />
+         return (
+            <div className="flex items-center gap-2">
+               <ProgressCircle progress={row.getValue('progress')} />
+               <span
+                  className="font-medium opacity-100 transition-opacity duration-300 ease-in-out"
+                  key={row.getValue('progress')}
+               >
+                  {row.getValue('progress')}%
+               </span>
+            </div>
+         )
       },
       filterFn: (row, id, value) => {
          return value.includes(row.getValue(id))

@@ -62,7 +62,7 @@ const CompressionArea: React.FC<HomeProps> = ({ dictionary }: HomeProps) => {
 
    return (
       <React.Fragment>
-         <div className="container grid gap-6 lg:grid-cols-[0.75fr_auto]">
+         <div className="container grid gap-6 lg:grid-cols-[0.6fr_auto]">
             <div className="space-y-4 rounded-lg border border-white-250 p-4">
                <Dropzone onDropFiles={(files) => {}} />
                <div className="flex flex-1 flex-col gap-4">
@@ -76,7 +76,9 @@ const CompressionArea: React.FC<HomeProps> = ({ dictionary }: HomeProps) => {
                   <Tabs defaultValue={TabOptions.COMPRESSION_LEVEL}>
                      <TabsList className="grid w-full grid-cols-2 gap-2">
                         <TabsTrigger value={TabOptions.COMPRESSION_LEVEL}>Nível de compressão</TabsTrigger>
-                        <TabsTrigger value={TabOptions.ADVANCED_SETTINGS}>Configurações avançadas</TabsTrigger>
+                        <TabsTrigger disabled value={TabOptions.ADVANCED_SETTINGS}>
+                           Configurações avançadas
+                        </TabsTrigger>
                      </TabsList>
                      <TabsContent value={TabOptions.COMPRESSION_LEVEL}>
                         <div className="space-y-4">
@@ -84,7 +86,9 @@ const CompressionArea: React.FC<HomeProps> = ({ dictionary }: HomeProps) => {
                               <CompressionOption
                                  key={l.id}
                                  level={l.value as 'low' | 'medium' | 'high'}
-                                 selected={l.value === level || false}
+                                 //  selected={l.value === level || false}
+                                 selected={l.value === 'medium'}
+                                 disabled={l.value !== 'medium'}
                                  onSelect={(level) => setLevel(level)}
                               />
                            ))}
@@ -109,11 +113,17 @@ const CompressionArea: React.FC<HomeProps> = ({ dictionary }: HomeProps) => {
 
 type CompressionOptionProps = {
    selected: boolean
+   disabled?: boolean
    level: 'low' | 'medium' | 'high'
    onSelect: (level: 'low' | 'medium' | 'high') => void
 }
 
-const CompressionOption: React.FC<CompressionOptionProps> = ({ level, selected, onSelect }: CompressionOptionProps) => {
+const CompressionOption: React.FC<CompressionOptionProps> = ({
+   level,
+   selected,
+   disabled,
+   onSelect
+}: CompressionOptionProps) => {
    let mapping_icons = {
       low: <Icon.LowLevel className="h-auto w-6" />,
       medium: <Icon.MediumLevel className="h-auto w-6" />,
@@ -141,7 +151,8 @@ const CompressionOption: React.FC<CompressionOptionProps> = ({ level, selected, 
                'grid cursor-default grid-cols-[24px_auto] items-center gap-4 rounded-lg border border-white-250 px-4 py-2',
                {
                   'bg-black-500': selected,
-                  '[&_svg]:invert': selected
+                  '[&_svg]:invert': selected,
+                  'pointer-events-none opacity-50': disabled
                }
             )}
          >
