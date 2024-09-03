@@ -33,7 +33,8 @@ const nextConfig = {
             permanent: true
          }
       ]
-   }
+   },
+   swcMinify: true
 }
 
 export default nextConfig

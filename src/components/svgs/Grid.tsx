@@ -1,4 +1,4 @@
-export function Grid(props: React.SVGProps<SVGSVGElement>) {
+export const Grid: React.FC<React.SVGProps<SVGSVGElement>> = (props) => {
    return (
       <svg viewBox="0 0 1920 1080" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
          <path stroke="#EAEAEA" strokeWidth={0.5} d="M2.18557e-8 31.75L1920 31.7502" />

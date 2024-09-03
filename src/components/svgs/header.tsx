@@ -1,4 +1,4 @@
-export function PanelLeftIcon(props: React.SVGProps<SVGSVGElement>) {
+export const PanelLeftIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => {
    return (
       <svg
          {...props}

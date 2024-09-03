@@ -1,4 +1,4 @@
-export function LowLevel(props: React.SVGProps<SVGSVGElement>) {
+export const LowLevel: React.FC<React.SVGProps<SVGSVGElement>> = (props) => {
    return (
       <svg id="low-level" viewBox="0 0 17 15" xmlns="http://www.w3.org/2000/svg" {...props}>
          <circle cx={1} cy={13.5} r={1} fill="#030303" />
@@ -14,7 +14,7 @@ export function LowLevel(props: React.SVGProps<SVGSVGElement>) {
    )
 }
 
-export function MediumLevel(props: React.SVGProps<SVGSVGElement>) {
+export const MediumLevel: React.FC<React.SVGProps<SVGSVGElement>> = (props) => {
    return (
       <svg id="medium-level" viewBox="0 0 17 15" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
          <circle cx={1} cy={13.5} r={0.5} fill="#030303" stroke="#030303" />
@@ -30,7 +30,7 @@ export function MediumLevel(props: React.SVGProps<SVGSVGElement>) {
    )
 }
 
-export function HighLevel(props: React.SVGProps<SVGSVGElement>) {
+export const HighLevel: React.FC<React.SVGProps<SVGSVGElement>> = (props) => {
    return (
       <svg id="high-level" viewBox="0 0 17 15" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
          <circle cx={1} cy={13.5} r={0.5} fill="#030303" stroke="#030303" />
