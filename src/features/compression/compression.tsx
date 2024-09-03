@@ -1,6 +1,6 @@
 'use client'
 
-import * as Icon from '../../components/svgs/compression-level'
+import * as Icon from '@/components/icons/compression-level'
 
 import { Button } from '@/components/ui/button'
 import { Dropzone } from '@/components/ui/dropzone'

@@ -1,11 +1,11 @@
 'use client'
 
+import { Grid } from '@/components/icons/grid'
+import { Logo } from '@/components/icons/logo'
 import { Button } from '@/components/ui/button'
 import { Footer } from '@/components/ui/footer'
 import { Header } from '@/components/ui/header'
 import { DictionaryProps } from '@/types/dictionary'
-import { Grid } from '../../components/svgs/grid'
-import { Logo } from '../../components/svgs/logo'
 
 import React from 'react'
 

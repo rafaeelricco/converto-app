@@ -29,7 +29,7 @@
          "@/dictionaries/*": ["./src/dictionaries/*"],
          "@/features/*": ["./src/features/*"],
          "@/utils/*": ["./src/utils/*"],
-         "@/svgs/*": ["./src/components/svgs/*"]
+         "@/icons/*": ["./src/components/icons/*"]
       }
    },
    "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
