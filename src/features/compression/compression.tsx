@@ -41,9 +41,10 @@ const CompressionArea: React.FC<HomeProps> = ({ dictionary }: HomeProps) => {
    console.log('state', state)
 
    React.useEffect(() => {
+      // Only for development
       let id = 'bf4bc249-1833-4456-9b71-90ca23a7b200'
 
-      let url = `ws://127.0.0.1:10000/ws?id=${id}`
+      let url = `${process.env.NEXT_PUBLIC_WS_URL}/ws?id=${id}`
       const ws = new WebSocket(url)
 
       ws.onopen = (event) => {
