@@ -1,6 +1,7 @@
 'use client'
 
-import { LogoCircle, PanelLeftIcon } from '@/components/svgs'
+import { PanelLeftIcon } from '@/components/svgs/header'
+import { LogoCircle } from '@/components/svgs/logo'
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip'
 import { general_routes } from '@/routes/general'

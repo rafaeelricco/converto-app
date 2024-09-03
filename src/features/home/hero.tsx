@@ -1,6 +1,7 @@
 'use client'
 
-import { Grid, Logo } from '@/components/svgs'
+import { Grid } from '@/components/svgs/grid'
+import { Logo } from '@/components/svgs/logo'
 import { Button } from '@/components/ui/button'
 import { Footer } from '@/components/ui/footer'
 import { Header } from '@/components/ui/header'
