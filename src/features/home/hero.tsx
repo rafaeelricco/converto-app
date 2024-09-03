@@ -3,9 +3,9 @@
 import { Button } from '@/components/ui/button'
 import { Footer } from '@/components/ui/footer'
 import { Header } from '@/components/ui/header'
-import { Grid } from '@/svgs/grid'
-import { Logo } from '@/svgs/logo'
 import { DictionaryProps } from '@/types/dictionary'
+import { Grid } from '../../components/svgs/grid'
+import { Logo } from '../../components/svgs/logo'
 
 import React from 'react'
 
