@@ -1,4 +1,4 @@
-function PanelLeftIcon(props: React.SVGProps<SVGSVGElement>) {
+export function PanelLeftIcon(props: React.SVGProps<SVGSVGElement>) {
    return (
       <svg
          {...props}
@@ -17,5 +17,3 @@ function PanelLeftIcon(props: React.SVGProps<SVGSVGElement>) {
       </svg>
    )
 }
-
-export { PanelLeftIcon }
